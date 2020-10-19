@@ -45,7 +45,7 @@ const token = app.jwt.sign({
                 userId: adminInfo._id,
             },
                 app.config.jwt.secret,
-                { expiresIn: 60 }
+                { expiresIn: '1d' }
 );
 
 ```
