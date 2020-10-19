@@ -1,0 +1,21 @@
+
+[
+  {
+    "name": "gate-server_dev",
+    "script": "server.js",
+    "args": [
+      "--port=7002",
+      "--env=prod"
+    ],
+    "env":{
+        "NODE_ENV":"production",
+        "EGG_SERVER_ENV":"prod"
+    },
+    "watch": false,
+    "out_file": "/dev/null",
+    "error_file": "/dev/null",
+    "cwd": "./",
+    "merge_logs": true,
+    "exec_mode": "fork_mode"
+  }
+]
