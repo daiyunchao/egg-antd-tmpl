@@ -5,7 +5,8 @@
       "script": "server.js",
       "args": [
         "--port=7002",
-        "--env=local"
+        "--env=local",
+        "--workers=4"
       ],
       "env":{
           "NODE_ENV":"development",

@@ -114,6 +114,16 @@ module.exports = app => {
   app.router.get('/main/*',app.controller.home.index);
 ```
 
+7. 进程通讯:
+```js
+//发送
+app.messenger.sendToApp(action, data);
+
+//接收 一般在app.js中监听
+app.messenger.on(action, data => {
+  // process data
+});
+```
 
 ## 前端更多配置:
 > 前端使用 `react+ antd + mobx` 实现的,具体代码在`client`文件夹中
