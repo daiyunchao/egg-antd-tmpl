@@ -15,10 +15,17 @@ class FetchCommon {
         console.log("FetchCommon options===>", options);
 
         let result = await fetch(url, options)
-            .then(response => response.json())
+            .then(response => {
+                if(response.status==401){
+                    return GM.goPage('/login');
+                }
+                return response.json()
+            })
             .then(data => {
                 console.log("data==>", data);
                 return data;
+            }).catch(err => {
+                console.log("catch error==>", err);
             });
         return result;
 
